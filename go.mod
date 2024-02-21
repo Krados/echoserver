@@ -1,4 +1,4 @@
-module echoserver
+module github.com/Krados/echoserver
 
 go 1.19
 

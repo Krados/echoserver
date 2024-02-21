@@ -1,7 +1,7 @@
 package server
 
 import (
-	"echoserver/internal/controller"
+	"github.com/Krados/echoserver/internal/controller"
 
 	"github.com/gin-gonic/gin"
 )

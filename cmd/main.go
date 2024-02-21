@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	"echoserver/internal/conf"
+	"github.com/Krados/echoserver/internal/conf"
 
 	"github.com/spf13/viper"
 	"go.uber.org/zap"

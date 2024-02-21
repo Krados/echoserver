@@ -4,9 +4,9 @@
 package main
 
 import (
-	"echoserver/internal/conf"
-	"echoserver/internal/controller"
-	"echoserver/internal/server"
+	"github.com/Krados/echoserver/internal/conf"
+	"github.com/Krados/echoserver/internal/controller"
+	"github.com/Krados/echoserver/internal/server"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"

@@ -1,7 +1,7 @@
 package data
 
 import (
-	"echoserver/internal/conf"
+	"github.com/Krados/echoserver/internal/conf"
 
 	"github.com/redis/go-redis/v9"
 )

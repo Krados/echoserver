@@ -1,7 +1,7 @@
 package data
 
 import (
-	"echoserver/internal/conf"
+	"github.com/Krados/echoserver/internal/conf"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

@@ -20,5 +20,5 @@ $ curl http://localhost:8087/api/v1/echo'
 
 ## 透過此專案(template)快速建立其他專案
 
-1. 下載 git clone https://github.com/Krados/echoserver.git
-2. 將專案內此字串 github.com/Krados/echoserver 全部 replace 成你要用專案名稱
+1. 將此專案 git clone 到本地
+2. 將專案內含有字串 "github.com/Krados/echoserver" 的地方全部 replace 成你要的專案名稱

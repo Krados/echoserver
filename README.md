@@ -15,7 +15,7 @@ $ docker run -itd --name echoserver -p 8087:8080 echoserver
 ## Try it out
 
 ```
-$ curl http://localhost:8087/api/v1/echo'
+$ curl http://localhost:8087/api/v1/echo
 ```
 
 ## 透過此專案(template)快速建立其他專案

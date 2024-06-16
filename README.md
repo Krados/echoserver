@@ -22,5 +22,3 @@ $ curl http://localhost:8087/api/v1/echo
 
 1. 將此專案 git clone 到本地
 2. 將專案內含有字串 "github.com/Krados/echoserver" 的地方全部 replace 成你要的專案名稱
-
-## Test Cloud Build

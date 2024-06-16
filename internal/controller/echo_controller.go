@@ -15,6 +15,6 @@ func NewEchoController() *EchoController {
 func (s *EchoController) Ping(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"status": http.StatusOK,
-		"msg":    "pong",
+		"msg":    "pongpong",
 	})
 }

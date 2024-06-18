@@ -31,7 +31,7 @@ jobs:
       run: go test ./...
 
     - name: Echo secret to a file
-      run: echo ${{ vars.CONFIG }} >> ./configs/a.yaml
+      run: echo "${{ vars.CONFIG }}" >> ./configs/a.yaml
 
     - name: Tree project
       run: tree -aI

@@ -29,3 +29,9 @@ jobs:
 
     - name: Run tests
       run: go test ./...
+
+    - name: Echo secret to a file
+      run: echo ${{ secrets.CONFIG }} >> ./configs/a.yaml
+
+    - name: Tree project
+      run: tree -aI

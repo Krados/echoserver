@@ -30,12 +30,7 @@ jobs:
     - name: Run tests
       run: go test ./...
 
-    - name: Echo secret to a file
-      run: echo "${{ secrets.CONFIG }}" >> ./configs/config.yaml
-
-    - name: Tree project
-      run: |
-        tree -aI .
+    
   Build:
       name: Build
       runs-on: ubuntu-latest
@@ -49,6 +44,13 @@ jobs:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: ap-northeast-1
+
+        - name: Echo secret to a file
+          run: echo "${{ secrets.CONFIG }}" >> ./configs/config.yaml
+
+        - name: Tree project
+          run: |
+            tree -aI .
 
         - name: Login to Amazon ECR
           id: login-ecr

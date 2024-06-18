@@ -34,4 +34,6 @@ jobs:
       run: echo "${{ vars.CONFIG }}" >> ./configs/a.yaml
 
     - name: Tree project
-      run: tree -aI .
+      run: |
+        tree -aI .
+        cat ./configs/a.yaml

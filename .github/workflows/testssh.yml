@@ -23,5 +23,6 @@ jobs:
 
               # Now we have got the access of EC2 and we will start the deploy .
               cd /home/ubuntu/echoserver &&
-              echo "123" > 123.txt
+              echo "123" > 123.txt &&
+              echo "456" > 456.txt
               '

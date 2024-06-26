@@ -16,9 +16,11 @@ jobs:
             PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
             HOSTNAME: ${{secrets.SSH_HOST}}
             USER_NAME: ${{secrets.USER_NAME}}
-      
+            CONFIGYAML: ${{secrets.CONFIG}}
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          echo "$CONFIGYAML" > config.yaml
+          scp -o StrictHostKeyChecking=no -i private_key config.yaml ${USER_NAME}@${HOSTNAME}:/home/ubuntu/echoserver
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
 
               # Now we have got the access of EC2 and we will start the deploy .

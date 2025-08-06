@@ -45,10 +45,9 @@ func main() {
 	// init logger
 	logger, _ := zap.NewProduction()
 	defer logger.Sync() // flushes buffer, if any
-	sugar := logger.Sugar()
 
 	// init app
-	ginEngine, err := initApp(&cfg, sugar)
+	ginEngine, err := initApp(&cfg, logger)
 	if err != nil {
 		panic(err)
 	}
@@ -61,7 +60,7 @@ func main() {
 	go func() {
 		// service connections
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			sugar.Fatalf("listen: %s\n", err)
+			logger.Fatal("listen: %s\n", zap.Error(err))
 		}
 	}()
 
@@ -73,13 +72,13 @@ func main() {
 	// kill -9 is syscall.SIGKILL but can't be catch, so don't need add it
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
-	sugar.Infoln("Shutdown Server ...")
+	logger.Info("Shutdown Server ...")
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	if err := srv.Shutdown(ctx); err != nil {
-		sugar.Fatal("Server Shutdown: ", err)
+		logger.Fatal("Server Shutdown: ", zap.Error(err))
 	}
 
-	sugar.Infoln("Server exiting")
+	logger.Info("Server exiting")
 }

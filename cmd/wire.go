@@ -13,6 +13,6 @@ import (
 	"go.uber.org/zap"
 )
 
-func initApp(cfg *conf.Config, sugar *zap.SugaredLogger) (*gin.Engine, error) {
+func initApp(cfg *conf.Config, logger *zap.Logger) (*gin.Engine, error) {
 	panic(wire.Build(controller.ProviderSet, server.ProviderSet))
 }

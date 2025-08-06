@@ -16,8 +16,8 @@ import (
 
 // Injectors from wire.go:
 
-func initApp(cfg *conf.Config, sugar *zap.SugaredLogger) (*gin.Engine, error) {
+func initApp(cfg *conf.Config, logger *zap.Logger) (*gin.Engine, error) {
 	echoController := controller.NewEchoController()
-	engine := server.NewHTTPServer(echoController)
+	engine := server.NewHTTPServer(echoController, logger)
 	return engine, nil
 }

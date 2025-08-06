@@ -23,3 +23,8 @@ generate:
 # docker-image
 docker-image:
 	docker build -t echoserver .
+
+.PHONY: docker-run
+# docker-run
+docker-run:
+	docker run -it -p 8087:8080 --rm echoserver

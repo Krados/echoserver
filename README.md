@@ -9,7 +9,7 @@ echo server 是一個 go 專案的基礎框架, 可以用來快速組建一個 R
 $ make docker-image
 
 # run service
-$ docker run -itd --name echoserver -p 8087:8080 echoserver
+$ make docker-run
 ```
 
 ## Try it out

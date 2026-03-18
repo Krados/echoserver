@@ -11,8 +11,8 @@ import (
 )
 
 func NewHTTPServer(echoController *controller.EchoController, logger *zap.Logger) *gin.Engine {
-	r := gin.New()
 	gin.SetMode(gin.ReleaseMode)
+	r := gin.New()
 	r.Use(ginzap.Ginzap(logger, time.RFC3339, true))
 	// Logs all panic to error log
 	//   - stack means whether output the stack info.
